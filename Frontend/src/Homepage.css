@@ -1,0 +1,15 @@
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css');
+
+.navbar {
+  margin-bottom: 50px;
+  border-radius: 0;
+}
+
+footer {
+    background-color: #222;
+	padding: 25px;
+}
+
+footer p, footer form {
+	color:#d4d7dd;
+}

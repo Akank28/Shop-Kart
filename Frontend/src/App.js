@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './book2.gif';
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 import test from "./test.jpg";
