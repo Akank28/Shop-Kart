@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Slide } from 'react-slideshow-image';
 import './App.css';
-import "bootstrap/dist/css/bootstrap.min.css";
+
 export default class ProdDisp extends Component {
 
     constructor(props) {
@@ -18,11 +18,11 @@ export default class ProdDisp extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/shopkart/5daf1d8d014f29052458ef31')
+        axios.get('http://localhost:4000/shopkart/'+this.props.match.params.id)
             .then(response => {
                 console.log(response.data.name);
                 this.setState({
-                    
+                    id: response.data._id,
                     name: response.data.name,
                     description: response.data.description,
                     price : response.data.price,

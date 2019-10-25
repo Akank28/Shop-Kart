@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 import myAccount from './account';
 import Products from './cardhome';
+import ProdDisp from './ProdDisp';
 
 class NavBar extends Component {
 
@@ -23,7 +24,7 @@ class NavBar extends Component {
 				    </div>
 				    <div className="collapse navbar-collapse" id="myNavbar">
 				      <ul className="nav navbar-nav">
-				        <li className="active"><Link to={"#"}>Home</Link></li>
+				        <li className="active"><Link to={"/"}>Home</Link></li>
 				        <li><Link to={"/"}>Products</Link></li>
 				        <li><Link to={"#"}>Deals</Link></li>
 				      </ul>
@@ -37,7 +38,7 @@ class NavBar extends Component {
 			<Switch>
 				<Route exact path='/' component={Products} />
 	            <Route path='/account' component={myAccount} />
-	            <Route path='/details/:id' component={myAccount} />
+	            <Route path='/details/:id' component={ProdDisp} />
 			</Switch>
 			</Router>
 			
