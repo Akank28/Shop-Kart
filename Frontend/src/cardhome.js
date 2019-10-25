@@ -39,7 +39,7 @@ class CardH extends Component {
 				</div>
     		));
     	return (
-    		<div className="container">
+    		<div className="container body">
     			<div className="row hidden-md-up">
     			{prodList}
     			</div>

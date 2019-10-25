@@ -5,7 +5,7 @@ import Footer from './footer';
 import NavBar from './navbar';
 import CardHome from './cardhome';
 import "./Homepage.css";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 
 // import DetailsProd from "./components/create-todos.component";
 

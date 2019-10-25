@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Slide } from 'react-slideshow-image';
 import './App.css';
-
+import "bootstrap/dist/css/bootstrap.min.css";
 export default class ProdDisp extends Component {
 
     constructor(props) {

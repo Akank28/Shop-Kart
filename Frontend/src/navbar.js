@@ -1,40 +1,80 @@
 import React, {Component} from "react";
 
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import {
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    NavLink,
+    UncontrolledDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem
+} from 'reactstrap';
+
 
 import myAccount from './account';
 import Products from './cardhome';
 import ProdDisp from './ProdDisp';
 
+import "bootstrap/dist/css/bootstrap.min.css";
+
 class NavBar extends Component {
 
+	constructor(props) {
+        super(props);
+
+        this.toggle = this.toggle.bind(this);
+        this.state = {
+            isOpen: false,
+            navCollapsed: true,
+            showNavbar: false
+        };
+    }
+    toggle() {
+        this.setState({
+            isOpen: !this.state.isOpen
+        });
+    }
 
 	render() {
+
+		const { navCollapsed } = this.state;
+
 		return (
 			<Router>
-				<nav className="navbar navbar-inverse">
-				  <div className="container-fluid">
-				    <div className="navbar-header">
-				      <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-				        <span className="icon-bar"></span>
-				        <span className="icon-bar"></span>
-				        <span className="icon-bar"></span>                        
-				      </button>
-				      <Link className="navbar-brand" to={"#"}>AKS Cart</Link>
-				    </div>
-				    <div className="collapse navbar-collapse" id="myNavbar">
-				      <ul className="nav navbar-nav">
-				        <li className="active"><Link to={"/"}>Home</Link></li>
-				        <li><Link to={"/"}>Products</Link></li>
-				        <li><Link to={"#"}>Deals</Link></li>
-				      </ul>
-				      <ul className="nav navbar-nav navbar-right">
-				        <li><Link to={"/account"}><span className="glyphicon glyphicon-user nav-link"></span> Your Account</Link></li>
-				        <li><Link to={"#"}><span className="glyphicon glyphicon-shopping-cart nav-link"></span> Cart</Link></li>
-				      </ul>
-				    </div>
-				  </div>
-				</nav>
+				<Navbar color="dark" dark expand="md">
+                    <NavbarBrand href="/">Shopping Cart</NavbarBrand>
+                    <NavbarToggler onClick={this.toggle} />
+                    <Collapse isOpen={this.state.isOpen} navbar>
+                        <Nav className="ml-auto" navbar>
+                            <NavItem>
+                                <NavLink href="/">Home</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="/">Products</NavLink>
+                            </NavItem>
+                            <UncontrolledDropdown nav inNavbar>
+                                <DropdownToggle nav caret>
+                                    Options
+                				</DropdownToggle>
+                    			<DropdownMenu right>
+			                        <DropdownItem>
+			                            <NavLink href="/account">Accounts</NavLink>
+			                  		</DropdownItem>
+	                                    	
+				                    <DropdownItem divider />
+				                    <DropdownItem>
+				                        <NavLink href="/">Logout</NavLink>
+				                  	</DropdownItem>
+                                </DropdownMenu>
+                            </UncontrolledDropdown>
+                        </Nav>
+                    </Collapse>
+                </Navbar>
 			<Switch>
 				<Route exact path='/' component={Products} />
 	            <Route path='/account' component={myAccount} />

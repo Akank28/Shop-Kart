@@ -1,4 +1,4 @@
-@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css');
+
 
 .navbar {
   margin-bottom: 50px;
@@ -7,9 +7,14 @@
 
 footer {
     background-color: #222;
-	padding: 25px;
+	padding: 12px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin-top: 50px;
 }
 
 footer p, footer form {
 	color:#d4d7dd;
+
 }
