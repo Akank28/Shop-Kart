@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
 import {
     Collapse,
     Navbar,
@@ -42,7 +42,7 @@ class NavBar extends Component {
 
 	render() {
 
-		const { navCollapsed } = this.state;
+		
 
 		return (
 			<Router>
