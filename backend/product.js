@@ -15,7 +15,7 @@ let product = new Schema({
         type: Number
     },
     photo: {
-        type: String
+        type: [String]
     },
     rating: {
         type: Number
