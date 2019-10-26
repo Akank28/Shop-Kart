@@ -12,7 +12,7 @@ export default class ProdDisp extends Component {
             name: '',
             description: '',
             price: '',
-            photo: '',
+            photo: [],
             rating: ''
         };
     }
@@ -65,6 +65,14 @@ export default class ProdDisp extends Component {
               }
             };
 
+        const picDir = this.state.photo.map( imag=> (
+
+          <div className="each-slide">
+            <img  className="img-fluid" src={require("./images/"+imag)} alt={this.state.name+" pic"} />
+          </div>
+
+          ));
+
         const photo="pic";
         return (
             <div className="App">
@@ -75,15 +83,7 @@ export default class ProdDisp extends Component {
                 <div className="wrapper row">
                   <div className="preview col-md-6">
                       <Slide {...properties}>
-                          <div className="each-slide">
-                          <img  className="img-fluid" src={require("./images/"+photo+"1.jpg")} />
-                          </div>
-                          <div className="each-slide">
-                          <img className="img-fluid" src={require("./images/"+photo+"2.jpg")} />
-                          </div>
-                          <div className="each-slide">
-                            <img className="img-fluid" src={require("./images/"+photo+"3.jpg")} />
-                          </div>
+                          {picDir}
                         </Slide>
                       
                   </div>
