@@ -7,6 +7,11 @@ A shopping-cart built with react js and node js
 
 *``` Dump folder has mongodb sample dump data ```*
 
+## Prerequisites
+
+- Nodejs 
+- MongoDb
+
 ## Running this project
 1. Clone this project
 2. Open backend folder in cmd and execute
