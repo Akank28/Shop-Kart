@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Slide } from 'react-slideshow-image';
 import "bootstrap/dist/css/bootstrap.min.css";
-class test extends Component {
+class Test extends Component {
 render(){
+    
 	return(
 		<div className="container">
    <div className="card shopping-cart">
             <div className="card-header bg-dark text-light">
                 <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-                Shipping cart
-                <a href="yyyjjyj" className="btn btn-outline-info btn-sm pull-right">Continiu shopping</a>
+                Shopping cart
+                <a href="yyyjjyj" className="btn btn-outline-info btn-sm pull-right">Continue shopping</a>
                 <div className="clearfix"></div>
             </div>
             <div className="card-body">
@@ -25,7 +26,7 @@ render(){
                             </h4>
                         </div>
                         <div className="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
-                            <div className="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
+                            <div className="col-3 col-sm-3 col-md-6 text-md-right" style={{paddingTop: '5px'}}>
                                 <h6><strong>25.00 <span className="text-muted">x</span></strong></h6>
                             </div>
                             <div className="col-4 col-sm-4 col-md-4">
@@ -55,7 +56,7 @@ render(){
                             </h4>
                         </div>
                         <div className="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
-                            <div className="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
+                            <div className="col-3 col-sm-3 col-md-6 text-md-right" style={{paddingTop: '5px'}}>
                                 <h6><strong>25.00 <span className="text-muted">x</span></strong></h6>
                             </div>
                             <div className="col-4 col-sm-4 col-md-4">
@@ -84,16 +85,16 @@ render(){
                 <div className="coupon col-md-5 col-sm-5 no-padding-left pull-left">
                     <div className="row">
                         <div className="col-6">
-                            <input type="text" className="form-control" placeholder="cupone code"></input>
+                            <input type="text" className="form-control" placeholder="coupon code"></input>
                         </div>
                         <div className="col-6">
-                            <input type="submit" className="btn btn-default" value="Use cupone"></input>
+                            <input type="submit" className="btn btn-default" value="Use coupon"></input>
                         </div>
                     </div>
                 </div>
-                <div className="pull-right" style="margin: 10px">
+                <div className="pull-right" style={{margin: '10px'}}>
                     <a href="guku" className="btn btn-success pull-right">Checkout</a>
-                    <div className="pull-right" style="margin: 5px">
+                    <div className="pull-right" style={{margin: '5px'}}>
                         Total price: <b>50.00€</b>
                     </div>
                 </div>
@@ -102,4 +103,4 @@ render(){
 </div>
 		)
 	}}
-export default test;
+export default Test;

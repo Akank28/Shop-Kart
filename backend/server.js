@@ -5,13 +5,20 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const SRoutes = express.Router();
 const PORT = 4000;
-
+const passport = require("passport");
+const users = require("./routes/api/users");
 let prod = require('./product');
 
 app.use(cors());
 app.use(bodyParser.json());
-
-mongoose.connect('mongodb://127.0.0.1:27017/shopkart', { useNewUrlParser: true });
+const db = require("./config/keys").mongoURI;
+mongoose
+  .connect(
+    db,
+    { useNewUrlParser: true }
+  )
+  .then(() => console.log("MongoDB successfully connected"))
+  .catch(err => console.log(err));
 const connection = mongoose.connection;
 
 connection.once('open', function() {
@@ -36,7 +43,12 @@ SRoutes.route('/:id').get(function(req, res) {
     });
 });
 app.use('/shopkart', SRoutes);
-
+// Passport middleware
+app.use(passport.initialize());
+// Passport config
+require("./config/passport")(passport);
+// Routes
+app.use("/api/users", users);
 app.listen(PORT, function() {
     console.log("Server is running on Port: " + PORT);
 });
