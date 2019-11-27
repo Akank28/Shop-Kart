@@ -15,10 +15,13 @@ import {
     DropdownItem
 } from 'reactstrap';
 
-
+import Register from "./Login/auth/Register";
+import Login from "./Login/auth/Login";
 import myAccount from './account';
 import Products from './cardhome';
 import ProdDisp from './ProdDisp';
+import Dashboard from "./Login/dashboard/Dashboard";
+import PrivateRoute from "./Login/private-route/PrivateRoute";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -57,6 +60,9 @@ class NavBar extends Component {
                             <NavItem>
                                 <NavLink href="/">Products</NavLink>
                             </NavItem>
+                             <NavItem>
+                                <NavLink href="/login">Login</NavLink>
+                            </NavItem>
                             <UncontrolledDropdown nav inNavbar>
                                 <DropdownToggle nav caret>
                                     Options
@@ -79,6 +85,9 @@ class NavBar extends Component {
 				<Route exact path='/' component={Products} />
 	            <Route path='/account' component={myAccount} />
 	            <Route path='/details/:id' component={ProdDisp} />
+                <Route exact path="/register" component={Register} />
+                <Route exact path="/login" component={Login} />
+                <PrivateRoute exact path="/dashboard" component={Dashboard} />
 			</Switch>
 			</Router>
 			
